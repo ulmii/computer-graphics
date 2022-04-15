@@ -7,11 +7,19 @@
 # Jakie s? zasady tych konwersji (kierunek zaokr?glania, 
 # jakie liczby s? uznawane za prawd? a jakie za fa?sz, itp.)?
 
+# Kazda liczba rozna od 0 jest konwertowana na true, reszta na false
+
 x = int8(32)
+printf("Class of x is %s, with value %d\n", class(x), x);
+x = logical(x);
+printf("Class of x is %s, with value %d\n", class(x), x);
 
-y = 1
-y = logical(y)
-true(y)
-false(y)
+y = 0
+printf("Class of y is %s, with value %d\n", class(y), y);
+y = logical(y);
+printf("Class of y is %s, with value %d\n", class(y), y);
 
-true(x)
+z = -48.19
+printf("Class of z is %s, with value %d\n", class(z), z);
+z = logical(z);
+printf("Class of z is %s, with value %d\n", class(z), z);

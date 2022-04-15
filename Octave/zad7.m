@@ -9,9 +9,11 @@
 # to znaczy ?e konwersja zosta?a ?le zaimplementowana. 
 # Cofnij si? do poprzedniego punktu i przemy?l, co z niego wynika.
 
-CAT = imread('test_img/cat.jpg');
+cat_image = imread('test_img/cat.jpg');
 
-[liczba_wierszy, liczba_kolumn, liczba_warstw] = size(CAT);
+red = cat_image(:,:,1);
+green = cat_image(:,:,2);
+blue = cat_image(:,:,3);
 
-imshow(CAT);
-drawnow;
+imwrite(cat(1, (red + green + blue) / 3), 'zad7.png');
+imwrite(cat(1, (red * 0.299 + green * 0.587 + blue * 0.114)), 'zad7_2.png');

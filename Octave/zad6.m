@@ -4,6 +4,6 @@
 x = uint8(32);
 y = uint8(254);
 
-
 # Przypisuje maksymalna wartosc uint8. It underflows, but does not wrap, so it is an absorbing barrier. 
 x + y
+class(x + y)

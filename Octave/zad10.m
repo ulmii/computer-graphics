@@ -4,12 +4,20 @@
 # Obrazów, które by?y na tyle ma?e, 
 # ?e spe?nia?y nasz warunek nie nale?y skalowa?.
 
-CAT = imread('test_img/cat.jpg');
+cat_image = imread('test_img/cat.jpg');
 
-imshow(CAT);
-drawnow;
+[liczba_wierszy, liczba_kolumn, liczba_warstw] = size(cat_image);
 
-c = imresize(CAT, 0.5);
-
-imshow(c);
-drawnow;
+if (liczba_wierszy <= 100 && liczba_kolumn <= 100)
+  imwrite(cat_image, 'zad10_resized.png');
+else
+  if (liczba_wierszy > liczba_kolumn)
+    
+  else
+    
+  endif
+  
+  scale = (liczba_wierszy / liczba_kolumn)
+  imshow(cat_image);
+  drawnow;
+endif
