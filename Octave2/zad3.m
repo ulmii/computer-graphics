@@ -23,22 +23,3 @@ green(:) = 0.0;
 blue(:) = 0.0;
 
 imwrite(cat(3, red, green, blue), 'zad3_2.png');
-
-
-img = imread('test_img/cameraman.png');
-I = double(img);
-
-%% Start 
-Bx = [-1, 0, 1;-2,0,2;-1,0,1]; % Sobel Gx kernel
-By = Bx'; % gradient Gy
-
-Yx = convn(Bx, I); % convolve in 2d
-Yy = convn(By, I);
-
-G = sqrt(Yy.^2 + Yx.^2); % Find magnitude
-
-Gmin = min(min(G)); 
-dx = max(max(G)) - Gmin; % find range
-G = floor((G-Gmin)/dx*255); % normalise from 0 to 255
-
-imwrite(G, 'zad3_3.png');
